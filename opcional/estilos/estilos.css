@@ -7,7 +7,6 @@ html{
 	background: rgb(251, 235, 235);
 }
 body{
-	width: 960px;
 	height: 1490px;
 	background: rgb(251, 235, 235);
 	background: #;
@@ -31,6 +30,8 @@ header{
 	height: 220px;
 	background: #f4beab;
 }
+body{
+	width: 960px; }
 #logo{
 	float: left;
 	margin: 10px 30px 0px 25px;
