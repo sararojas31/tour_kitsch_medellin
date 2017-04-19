@@ -34,7 +34,11 @@ header{
 	width: 180px;
 	height: 110px;
 	float: left;
-	padding: 20px 10px 20px 10px;
+	padding: 20px 10px 0px 10px;
+	margin-bottom: -20px;
+}
+.fb-share-button{
+	margin-left: 780px;
 }
 #facebook{
 	float: left;
@@ -71,6 +75,7 @@ fieldset{
 	background: #ffffff;
 	color: rgb(246, 92, 104);
 }
+
 nav{
 	width: 680px;
 	height: 40px;
