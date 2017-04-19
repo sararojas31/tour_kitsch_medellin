@@ -10,6 +10,14 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 	<header>		
 			<a href="index.html"><img id="logo" src="images/logo.png"></a>
 			<h2 id="titulo">RUTA GASTRONÓMICA</h2>
@@ -18,6 +26,7 @@
 					<a href="https://www.facebook.com/"> <img id="facebook" src ="images/facebook.png"></a>
 					<a href="https://www.instagram.com/"><img id="instagram" src="images/instagram.png"></a>
     			<FORM method=GET action="http://www.google.es/search"> 
+
     			 	<fieldset> 
         				<input type=hidden name=ie value=UTF-8 /> 
         				<input type=hidden name=oe value=UTF-8 />                      
@@ -28,6 +37,7 @@
     				</fieldset> 
    				</FORM> 
 			</section>
+			<div class="fb-share-button" data-href="https://sararojas31.github.io/tour_kitsch_medellin/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsararojas31.github.io%2Ftour_kitsch_medellin%2F&amp;src=sdkpreparse">Compartir</a></div>
 			<nav>
 				<ul>
 					<li><a class="botones" href="pages/kitsch.html" target="_new">KITSCH</a></li>
@@ -62,11 +72,11 @@
 
 
 
-<a href="pages/kitsch.html"><section id="irakitsch">
+<a href="kitsch.html"><section id="irakitsch">
 <center><h2 id="titulo1">K I T S C H</h2>
 <P id="parrafo1">Esta caracterizado por la exageración o exuberancia en sus productos, por los colores que generalmente usa como colores fluorescentes o vivos, por las formas que emplean en los productos y los materiales.</P></center></section></a>	
 
-<a href="pages/ruta.html"><section id="iraoferta">
+<a href="oferta.html"><section id="iraoferta">
 	<center><h2 id="oferta">O   F   E   R   T   A</h2>	
 	<img src="images/oferta1.jpg">
 	<img src="images/oferta2.jpg">
@@ -76,7 +86,7 @@
 	<p id="sentidos">Un viaje que estimula los sentidos</p>
 	</center>
 </section></a>
-<a href="pages/tour.html"><section id="tour"><center>
+<a href="tour.html"><section id="tour"><center>
 	<img id="chiva" src="images/chiva.jpg">
 	<P id="viajes">Viajes todos los viernes, sábados y domingos, punto de encuentro a acordar con degustación en cada uno de los restaurantes que vistamos. <br>
 Valor persona $80.000</P>
