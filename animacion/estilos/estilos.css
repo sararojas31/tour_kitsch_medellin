@@ -7,9 +7,7 @@ html{
 	background: rgb(251, 235, 235);
 }
 body{
-	height: 1490px;
 	background: rgb(251, 235, 235);
-	background: #;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -22,6 +20,30 @@ header{
 	color:rgb(246, 92, 104) ;
 	background: rgb(251, 235, 235);
 }
+input[type="search"]{
+    width: 45px; /*ancho por defecto*/
+    background: #fff url('../images/icon-lupa.png') no-repeat 9px center; /*icono lupa*/
+    padding: 9px 10px 9px 32px;
+    border-radius: 15em;
+    -webkit-transition: all .5s; /* transición de .5seg a todos los elementos para chrome*/
+    -moz-transition: all .5s; /* transición de .5seg a todos los elementos para mozilla*/
+    -o-transition: all .5s; /* transición de .5seg a todos los elementos para ophera*/
+    transition: all .5s; /* transición de .5seg a todos los elementos*/
+    outline: none; /* ocultar el fucos automático de los input */
+}
+input[type="search"]:focus{
+    width: 170px; /*tamaño del boton buscar al hacer click*/
+    padding-left: 32px; /*espacio entre el icono lupa y el placeholder*/
+    color: #000;
+    background-color: #FFF;
+} 
+
+
+
+
+
+
+
 
 /*desktop styles*/
 @media only screen and (min-width:769px) {
@@ -32,7 +54,9 @@ header{
 	background: #f4beab;
 }
 body{
-	width: 960px; }
+	width: 960px;
+	height: 1490px;
+}
 #logo{
 	float: left;
 	margin: 10px 30px 0px 25px;
@@ -46,56 +70,63 @@ body{
 	float: left;
 	margin: 10px 30px 0px 25px;
 }
+#logotablet{
+	display: none;
+}
 #titulo{
 	float: left;
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 50px;
+	font-size: 3.1em;
 	color: #ffffff;
-	margin: 40px 90px 50px 40px;
+	margin: 40px 80px 50px 40px;
 }
+#fecha{width: 23%;
+	margin: 1% 2% 0% 0% ;
+	text-decoration: none;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1em;
+	float: right; }
+
 #buscador{
 	width: 180px;
-	height: 110px;
+	height: 70px;
 	float: left;
 	padding: 20px 10px 20px 10px;
 }
-#facebook{
+input{
 	float: left;
-	margin-right: 50px;
-	margin-top: 10px;
 }
-#twitter{
+.redes{
+	text-decoration: none;
 	float: left;
-	margin-right: 50px;
-	margin-top: 10px;
+	margin-bottom: 15px;
 }
-#instagram{
-	float: left;
-	margin-top: 10px;
+#icotwi{
+	color: #fff;
+	font-size: 2em;
+	margin-right: 35px;
 }
-fieldset{
-	display: block;
-	margin: 60px 0px 0px 0px;
-	border: none;
+#icotwi:hover{
+	color:rgb(246, 92, 104) ;
 }
-#s{
-	width: 115px;
-	border: none;
+#icoface{
+	color: #fff;
+	font-size: 2em;
+	margin-right: 35px;
 }
-#x{
-    text-align: center;
-    cursor: default;
-    color: #ffffff;
-    background: none;
-    padding: 2px 6px 3px;
-    border: solid 1px #ffffff;
+#icoface:hover{
+	color:rgb(246, 92, 104) ;
 }
-#x:hover{
-	background: #ffffff;
-	color: rgb(246, 92, 104);
+#icoins{
+	color: #fff;
+	font-size: 2em;
 }
-.bt-menu .icon-menu{
+#icoins:hover{
+	color:rgb(246, 92, 104) ;
+}
+.menu_bar{
 	display: none;
 }
 
@@ -121,7 +152,7 @@ li{float: left;
 	text-decoration: none;
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 20px;
+	font-size: 1.25em;
 	color: #ffffff;
 	border-left: solid #ffffff 1px;
 	border-right: solid #ffffff 1px;
@@ -144,18 +175,24 @@ li{float: left;
 	margin-right: auto;
 	color: #000;
 }
+#irakitschtablet{
+	display: none;
+}
+#irakitschcel{
+	display: none;
+}
 #titulo1{
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-decoration: none;
 	color: #000;
-	font-size: 40px;
+	font-size: 2.50em;
 	margin-top: 20px;
 }
 #parrafo1{
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-decoration: none;
 	color: #000;
-	font-size: 20px;
+	font-size: 1.25em;
 	margin: 10px 100px 0px 100px;	
 }
 #iraoferta{
@@ -171,7 +208,10 @@ li{float: left;
 	text-decoration: none;
 }
 #oferta{
-	font-size: 50px;
+	font-size: 3em;
+}
+.imgcel{
+	display: none;
 }
 #experiencia{
 	font-size: 25px;
@@ -196,9 +236,24 @@ li{float: left;
 -moz-box-shadow: 10px 11px 28px 3px rgba(0,0,0,0.75);
 box-shadow: 10px 11px 28px 3px rgba(0,0,0,0.75);
 }
+#chivatablet{
+	display: none;
+}
+#chivacel{
+	display: none;
+}
 #tourytarifas{
 	color: #fff;
 	font-size: 35px;
+}
+#tours{
+	display: none;
+}
+#yy{
+	display: none;
+}
+#tarifas{
+	display: none;
 }
 #viajes{
 	color: #fff;
@@ -215,23 +270,25 @@ box-shadow: 10px 11px 28px 3px rgba(0,0,0,0.75);
 	font-size: 14px;
 	color: #fff;
 }
-#video{
+#videopc{
 	float: left;
 }
-#bannerpc{
-	width: 300px;
-	height: 300px;
-	display: block;
-	margin: 100px;
-	}
-	#bannertablet{
-		display: none;
-	}
-	#bannercel{
-		display: none;
-	}
-
-
+#videota{
+	display: none;
+}
+#videocel{
+	display: none;
+}
+#banner{
+	margin: -145px 0px 0px 10px;
+	float: left;
+}
+#bannertablet{
+	display: none;
+}
+#bannercel{
+	display: none;
+}
 
 /*footer*/
 footer{
@@ -296,80 +353,102 @@ footer{
 	float: left;
 	padding: 0px 10px 0px 10px;
 }
-#y{
-	text-align: center;
-    cursor: default;
-    color: #000;
-    background: none;
-    padding: 2px 6px 3px;
-    border: solid 1px #000;
+.redesfo{
+	margin-top: 0%;
+	text-decoration: none;
+	margin-bottom: 15px;
 }
-#y:hover{
-	background: #ffffff;
-	color: rgb(246, 92, 104);
-	border: none;
-}
-#fecha{
-	margin-left: 600px;
-	margin-top: 180px;
-	font-family: 'PT Sans Narrow', sans-serif;
-	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 16px;
+#icotwifo{
 	color: #000;
+	font-size: 2em;
+	margin-right: 35px;
+}
+#icotwifo:hover{
+	color:#fff ;
+}
+#icofacefo{
+	color: #000;
+	font-size: 2em;
+	margin-right: 35px;
+}
+#icofacefo:hover{
+	color:#fff ;
+}
+#icoinsfo{
+	color: #000;
+	font-size: 2em;
+	margin-bottom: 15px;
+}
+#icoinsfo:hover{
+	color: #fff ;
 }
 /*footer*/
 
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*tablet styles*/
 @media only screen and (min-width:481px) and (max-width:768px) {
  	body{
- 		width: 768px;
+ 		width: 780px;
+ 		height: 1500px;
+ 		margin: 0%;
  	}
-#bannerpc{
-	display: none;
-}
-#bannertablet{
-	width: 150px;
-	height: 150px;
-	display: block;
-	margin: 100px;
-	}
-	#bannercel{
-		display: none;
-	}
 
 	#logo{
-	margin-top: 50px;
-	margin-left: 125px;
-	margin-right: auto;
+	display: none;
+}
+#logotablet{
 	float: left;
+	margin: 50px 30px 0px 140px;
 }
 header{
-	width: 100%;
-	height: 270px;
+    width: 100%;
+	height: 200px;
 	background: #f4beab;
-	float: left;
 }
-
+#fecha{
+	display: none;
+}
 #titulo{
 	float: left;
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 35px;
+	font-size: 1.8em;
 	color: #ffffff;
-	margin: 140px 90px 50px 55px;
+	margin: 90px 90px 10px 40px;
 }
 #buscador{
 	display: none;
+}
+#celuco{
+	float: left;
+	margin-left: 40%;
 }
 nav{
 	width: 300px;
 	height: 40px;
 	background: #f4beab;
 	float: left;
-	margin: -40px 0px 30px 355px;
+	margin: 0px 0px 30px 20px;
 }
 ul{
 	list-style-type: none;
@@ -461,7 +540,7 @@ li{float: left;
  	    position: fixed;
 		width:100%;
 		background:#f4beab;
-		border: 1px solid white;
+		border-bottom: 1px solid white;
 }
 .bt-menu {
 		display:block;
@@ -477,38 +556,215 @@ li{float: left;
 	.menu_bar span {
 		float:left;
 	}
+#irakitsch{
+	display: none;
+}
+#irakitschcel{
+	display: none;
+}
+#irakitschtablet{
+	width: 100%;
+	height: 90px;
+	float: left;
+	background: #f5cebe;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.3%;
+	margin-top: 1.3%;
+	color: #000;
+}
+#titulotablet{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.5em;
+	letter-spacing: 10px;
+}
+#parrafotablet{
+ 	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1em;
+	margin: 5px 20px 0px 20px;
+}
+#iraoferta{
+	width: 100%;
+	height: 340px;
+	float: left;
+	margin-top: 1.3%;
+	background: #f5cebe;
+	margin-left: auto;
+	margin-right: auto;
+	color: #000;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+}
+#oferta{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #000;
+	font-size: 1.5em;
+	letter-spacing: 5px;
+	margin-bottom: 1.3%;
+}
+.imgcel{
+	display: none;
+}
+#experiencia{
+	font-size: 1.5em;
+	margin-top: 1.3%;
+}
+#sentidos{
+	font-size: 1.15em;
+}
+#tour{
+	margin-top: 1.3%;
+	margin-right: 1.3%;
+	float: left;
+	width: 50%;
+	height: 500px;
+	background: #f5cebe; 
+	font-family: 'Open Sans Condensed', sans-serif;
+}	
+#chiva{
+	display: none;
+}
+#chivacel{
+	display: none;
+}
+#chivatablet{
+	margin-top: 0%;
+	float: left;
+	-webkit-box-shadow: 10px 11px 28px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 11px 28px 3px rgba(0,0,0,0.75);
+box-shadow: 10px 11px 28px 3px rgba(0,0,0,0.75);
+}
+#tourytarifas{
+display: none;
+}
+#tours{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	font-size: 3em;
+	letter-spacing: 10px;
+	float: left;
+	margin-top: -20%;
+	margin-left: 10%;
+}
+#yy{
+	float: left;
+	margin-left: 55%;
+	margin-top: -10%;
+	margin-bottom: 7%;
 
 }
+#viajes{
+	float: left;
+	color: #000;
+	font-size: 1em;
+	margin: 0% 0% 0% 2.5%;
+}
+#tarifas{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	font-size: 3em;
+	letter-spacing: 10px;
+	float: left;
+	margin-left: 25%;
+}
+#publicidad{
+	float: left;
+	margin-top: 1.3%;
+	margin-bottom: 1.3%;
+	width: 370px;
+	background: #f5cebe; 
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	color: #fff;
+}
+#videota{
+	float: left;
+	margin-left: 5%;
+}
+#videopc{
+	display: none;
+}
+#videocel{
+	display: none;
+}
+#banner{
+	display: none;
+}
+#bannertablet{
+	float: left;
+	margin-left: 3.9%;
+}
+#bannercel{
+	display: none;
+}
+footer{
+	float: left;
+	width: 100%;
+	height: 150px;
+	background:#f5cebe;
+	margin-top: 1.3%;
+}
+#logofo{
+	float: left;
+	margin-top: 2.6%;
+	margin-left: 3.9%;
+}
+#datos{
+	float: left;
+	margin-top: 5.2%;
+	margin-left: 2.6%;
+}
+
+#navfo{
+	display: none;
+}
+#buscadorfo{
+	display: none;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*mobile styles*/
 @media only screen and (max-width:480px) {
 body{
-	width: 480;
+	width: 100%;
 }
 header{
 	width: 100%;
-	height: 270px;
+	height: 40px;
 	background: #f4beab;
 }
-#bannerpc{
-	display: none;
-}
-#bannertablet{
-	display: none;
-}
-#bannercel{
-	width: 150px;
-	height: 150px;
-	display: block;
-	margin: 100px;
-	}
-
 #logo{
-	float: left;
-	margin-top: 55px;
-	margin-left: 80px;
+display: none;
 }
-
+#logotablet{
+	display: none;
+}
 #titulo{
 	display: none;
 }
@@ -516,6 +772,9 @@ header{
 	display: none;
 }
 ul li{
+	display: none;
+}
+#fecha{
 	display: none;
 }
 .botones{
@@ -558,12 +817,11 @@ ul li{
 }
 
  .menu_bar {
- 		padding: 10px;
+ 		padding: 5px;
  	    position: fixed;
 		width:100%;
 		background:#f4beab;
-		border: 1px solid white;
-}
+		border-bottom: 1px solid white;
 }
 .bt-menu {
 		display:block;
@@ -579,6 +837,176 @@ ul li{
 	.menu_bar span {
 		float:left;
 	}
+.icon-menu{
+	margin-top: 
+}
+
+#celuco{
+	margin-left: 40%;
+}
+#tableta{
+	display: none;
+}
+.ws_images{
+	display: none;
+}
+#irakitschtablet{
+	width: 100%;
+	float: left;
+	background: #f5cebe;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.3%;
+	margin-top: 3%;
+	color: #000;
+}
+#titulotablet{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	font-size: 2em;
+	letter-spacing: 10px;
+	text-align: right;
+}
+#parrafotablet{
+ 	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1em;
+	margin: 0px 20px 0px 20px;
+	text-align: right;
+}
+#irakitsch{
+	display: none;
+}
+#iraoferta{
+	width: 100%;
+	float: left;
+	margin-top: 1.3%;
+	background: #f5cebe;
+	margin-left: auto;
+	margin-right: auto;
+	color: #000;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+}
+#oferta{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #000;
+	font-size: 3em;
+	letter-spacing: 10px;
+	margin-bottom: 1.3%;
+}
+.imgpcta{
+	display: none;
+}
+#chiva{
+	display: none;
+}
+#chivatablet{
+	display: none;
+}
+#tour{
+	margin-top: 1.3%;
+	margin-right: 1.3%;
+	float: left;
+	width: 100%;
+	background: #f5cebe; 
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+#chivacel{
+	margin-left: 1%;
+	margin-top: 1%;
+	float: left;
+	-webkit-box-shadow: 10px 11px 28px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 11px 28px 3px rgba(0,0,0,0.75);
+box-shadow: 10px 11px 28px 3px rgba(0,0,0,0.75);
+}
+#tourytarifas{
+display: none;
+}
+#tours{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	font-size: 3em;
+	letter-spacing: 10px;
+	float: left;
+	margin-top: -20%;
+	margin-left: 10%;
+}
+#yy{
+	float: left;
+	margin-left: 55%;
+	margin-top: -10%;
+	margin-bottom: 4%;
+
+}
+#viajes{
+	float: left;
+	color: #000;
+	font-size: 1.5em;
+	margin: 0% 0% 0% 2.5%;
+}
+#tarifas{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	font-size: 3em;
+	letter-spacing: 10px;
+	float: left;
+	margin-left: 30%;
+}	
+#publicidad{
+	float: left;
+	margin-top: 1.3%;
+	margin-bottom: 1.3%;
+	width: 100%;
+	background: #f5cebe; 
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.2em;
+	color: #000;
+}
+#videocel{
+	float: left;
+}
+#videota{
+	display: none;
+}
+#videopc{
+	display: none;
+}
+#banner{
+	display: none;
+}
+#bannertablet{
+	display: none;
+}
+footer{
+	float: left;
+	width: 100%;
+	background:#f5cebe;
+	margin-top: 1.3%;
+}
+#logofo{
+	float: left;
+	margin-top: 2.6%;
+	margin-left: 2%;
+}
+#datos{
+	font-size: 0.6em;
+	float: left;
+	margin-top: 9%;
+	margin-left: 0.5%;
+}
+
+#navfo{
+	display: none;
+}
+#buscadorfo{
+	display: none;
+}
 
 }
 
