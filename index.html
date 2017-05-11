@@ -2,52 +2,127 @@
 <html>
 <head>
 	<title>Tour Kitsch</title>
-	<link rel="stylesheet" type="text/css" href="estilos/estilo.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|PT+Sans+Narrow" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans+Condensed:300" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="estilos/style.css" />
+	<link rel="stylesheet" type="text/css" href="estilos/styleicono.css">
 	<link rel="shortcut icon" href="favicon.png"/>
 <script type="text/javascript" src="js/jquery.js"></script>
-</head>
-<body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-	<header>		
-			<a href="index.html"><img id="logo" src="images/logo.png"></a>
-			<h2 id="titulo">RUTA GASTRONÓMICA</h2>
-			<section id="buscador">
-					<a href="https://twitter.com/"><img id="twitter" src="images/twitter.png"></a>
-					<a href="https://www.facebook.com/"> <img id="facebook" src ="images/facebook.png"></a>
-					<a href="https://www.instagram.com/"><img id="instagram" src="images/instagram.png"></a>
-    			<FORM method=GET action="http://www.google.es/search"> 
 
-    			 	<fieldset> 
-        				<input type=hidden name=ie value=UTF-8 /> 
-        				<input type=hidden name=oe value=UTF-8 />                      
-        				<INPUT TYPE=text id="s" name="q" value=""/> 
-        				<font>                                
-        					<INPUT type=submit  id="x" name=btnG VALUE="Buscar" /> 
-        				</font> 
-    				</fieldset> 
-   				</FORM> 
+</head>
+<body onLoad="goforit()"  >
+
+	<!--menú inicial-->
+	<header>	
+			<a href="index.html"><img id="logo" src="images/logo.png"></a>
+			<a href="index.html"><img id="logotablet" src="images/logotablet.png"></a>
+			<h2 id="titulo">RUTA GASTRONÓMICA</h2>
+			<section id="fecha">
+				<script>
+	
+
+			var dayarray=new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado")
+			var montharray=new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre")
+
+			function getthedate(){
+			var mydate=new Date()
+			var year=mydate.getYear()
+			if (year < 1000)
+			year+=1900
+			var day=mydate.getDay()
+			var month=mydate.getMonth()
+			var daym=mydate.getDate()
+			if (daym<10)
+			daym="0"+daym
+			var hours=mydate.getHours()
+			var minutes=mydate.getMinutes()
+			var seconds=mydate.getSeconds()
+			var dn="AM"
+			if (hours>=12)
+			dn="PM"
+			if (hours>12){
+			hours=hours-12
+			}
+			if (hours==0)
+			hours=12
+			if (minutes<=9)
+			minutes="0"+minutes
+			if (seconds<=9)
+			seconds="0"+seconds
+			//change font size here
+			var cdate="<small><font color='ffffff' face='Yanone Kaffeesatz'><b>"+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+dn
+			+"</b></font></small>"
+			if (document.all)
+			document.all.clock.innerHTML=cdate
+			else if (document.getElementById)
+			document.getElementById("clock").innerHTML=cdate
+			else
+			document.write(cdate)
+			}
+			if (!document.all&&!document.getElementById)
+			getthedate()
+			function goforit(){
+			if (document.all||document.getElementById)
+			setInterval("getthedate()",1000)
+			}
+
+				</script>
+				<span id="clock"></span>
 			</section>
-			<div class="fb-share-button" data-href="https://sararojas31.github.io/tour_kitsch_medellin/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsararojas31.github.io%2Ftour_kitsch_medellin%2F&amp;src=sdkpreparse">Compartir</a></div>
+			<section id="buscador">
+					<a class="redes" href="https://twitter.com/" target="_new"><span class="icon-twitter" id="icotwi"></span></a>
+					<a class="redes" href="https://facebook.com/" target="_new"><span class="icon-facebook" id="icoface"></span></a>
+					<a class="redes" href="https://www.instagram.com/" target="_new"><span class="icon-instagram" id="icoins"></span></a>
+					
+    			    <form id="pc" action="">
+        				<input type="search" name="nombre" placeholder="Buscar">
+    				</form>
+    				
+			</section>
+			<div class="menu_bar">
+			<a href="#" class="bt-menu"><span class="icon-menu"></span></a>
+    				<form id="celuco" action="">
+        				<input type="search" name="nombre" placeholder="Buscar">
+    				</form>
+		</div>	
 			<nav>
 				<ul>
-					<li><a class="botones" href="pages/kitsch.html" target="_new">KITSCH</a></li>
-					<li><a class="botones" id="largo" href="pages/ruta.html" target="_new">GASTRONOMÍA</a></li>
-					<li><a class="botones" href="pages/tour.html" target="_new">TOUR</a></li>
-					<li><a class="botones" href="pages/galeria.html" target="_new">GALERÍA</a></li>
-					<li><a class="botones" href="pages/contacto.html" target="_new">CONTACTO</a></li>
+					<li><a class="botones" href="pages/kitsch.html" target="_new"><span class="icon-droplet" id="icodro"></span>KITSCH</a></li>
+
+					<li><a class="botones" id="largo" href="pages/ruta.html" target="_new"><span class="icon-spoon-knife" id="icospo"></span>GASTRONOMÍA</a></li>
+
+					<li><a class="botones" href="pages/tour.html" target="_new"><span class="icon-road" id="icoro"></span>TOUR</a></li>
+
+					<li><a class="botones" href="pages/galeria.html" target="_new"><span class="icon-stackoverflow" id="icosta"></span>GALERÍA</a></li>
+					
+					<li><a class="botones" href="pages/contacto.html" target="_new"><span class="icon-address-book" id="icoadd"></span>CONTACTO</a></li>
+				</ul>
+			</nav>
+
+			<nav id="nav2" >
+				<ul id="ul2">
+					<li class="li2"><a class="botones2" href="pages/kitsch.html" target="_new"><span class="icon-droplet"></span>KITSCH</a></li>
+
+					<li class="li2"><a class="botones2" id="largo" href="pages/ruta.html" target="_new"><span class="icon-spoon-knife"></span>GASTRONOMÍA</a></li>
+
+					<li class="li2"><a class="botones2" href="pages/tour.html" target="_new"><span class="icon-road"></span>TOUR</a></li>
+
+					<li class="li2"><a class="botones2" href="pages/galeria.html" target="_new"><span class="icon-stackoverflow"></span>GALERÍA</a></li>
+					
+					<li class="li2"><a class="botones2" href="pages/contacto.html" target="_new"><span class="icon-address-book"></span>CONTACTO</a></li>
 				</ul>
 			</nav>
 	</header>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/js.js"></script>
+<!--menú inicial-->
+
+<section id="irakitschtablet"><center><h2 id="titulotablet">K I T S C H</h2>
+<P id="parrafotablet">Esta caracterizado por la exageración o exuberancia en sus productos, por los colores que generalmente usa como colores fluorescentes o vivos, por las formas que emplean en los productos y los materiales.</P></center></section>
+
+
+
 	<!-- Start WOWSlider.com BODY section -->
 <div id="wowslider-container1">
 <div class="ws_images"><ul>
@@ -72,34 +147,69 @@
 
 
 
-<a href="kitsch.html"><section id="irakitsch">
+<a href="pages/kitsch.html"><section id="irakitsch">
 <center><h2 id="titulo1">K I T S C H</h2>
 <P id="parrafo1">Esta caracterizado por la exageración o exuberancia en sus productos, por los colores que generalmente usa como colores fluorescentes o vivos, por las formas que emplean en los productos y los materiales.</P></center></section></a>	
 
-<a href="oferta.html"><section id="iraoferta">
+
+<a href="pages/ruta.html"><section id="iraoferta">
 	<center><h2 id="oferta">O   F   E   R   T   A</h2>	
-	<img src="images/oferta1.jpg">
-	<img src="images/oferta2.jpg">
-	<img src="images/oferta3.jpg">
-	<img src="images/oferta4.jpg">
+	<img class="imgpcta"src="images/oferta1.jpg">
+	<img class="imgcel" src="images/4cel.jpg">
+ 	<img class="imgpcta"src="images/oferta2.jpg">
+	<img class="imgcel" src="images/3cel.jpg">
+	<img class="imgpcta"src="images/oferta3.jpg">
+	<img class="imgcel" src="images/2cel.jpg">
+	<img class="imgpcta"src="images/oferta4.jpg">
+	<img class="imgcel" src="images/1cel.jpg">
 	<p id="experiencia">EXPERIENCIA GASTRONÓMICA KITSCH </p>
 	<p id="sentidos">Un viaje que estimula los sentidos</p>
 	</center>
 </section></a>
-<a href="tour.html"><section id="tour"><center>
+<a href="pages/tour.html"><section id="tour"><center>
 	<img id="chiva" src="images/chiva.jpg">
+	<img id="chivatablet" src="images/chivatablet.jpg">
+	<img id="chivacel" src="images/chivacel.jpg">
+	<h2 id="tours">TOURS</h2>
+	<img id="yy" src="images/yy.png">
 	<P id="viajes">Viajes todos los viernes, sábados y domingos, punto de encuentro a acordar con degustación en cada uno de los restaurantes que vistamos. <br>
 Valor persona $80.000</P>
+<center><h2 id="tarifas">TARIFAS</h2></center>
 	<h2 id="tourytarifas">TOUR Y TARIFAS</h2>
 </center>
 </section></a>
+
+
 <center><aside id="publicidad">
 <h2>No es nuestro, pero nos interesa...</h2>
-	<iframe id="video" width="310" height="175" src="https://www.youtube.com/embed/9vFwLkYkWNY" frameborder="0" allowfullscreen></iframe>
+	<video id="videopc" width="310" height="175" controls="controls" preload="auto" >
+		<source src="video/video.mp4" type="video/mp4" />
+		<source src="video/video.ogv" type="video/ogv" />
+		<source src="video/video.webm" type="video/webm" />
+	</video>
+	<video id="videota" width="330" height="195" controls="controls" preload="auto" >
+		<source src="video/video.mp4" type="video/mp4" />
+		<source src="video/video.ogv" type="video/ogv" />
+		<source src="video/video.webm" type="video/webm" />
+	</video>
+	<video id="videocel" width="480" height="340" controls="controls" preload="auto" >
+		<source src="video/video.mp4" type="video/mp4" />
+		<source src="video/video.ogv" type="video/ogv" />
+		<source src="video/video.webm" type="video/webm" />
+	</video>
 </aside></center>
-<aside>
-	<img id="banner" src="images/banner1.jpg">
+
+
+<aside id="banner">
+	<iframe width="310" height="370" src="pages/bannerpc.html"></iframe>
 </aside>
+<aside id="bannertablet">
+	<iframe  width="310" height="272" src="pages/bannertablet.html"></iframe>
+</aside>
+<aside id="bannercel">
+		<iframe  width="480" height="574" src="pages/bannercel.html"></iframe>
+</aside>
+
 
 <footer>
 		<a href="index.html"><img id="logofo" src="images/logofo.png"></a>
@@ -116,22 +226,16 @@ Valor persona $80.000</P>
                               NIT: 890901352-3 | TODOS LOS DERECHOS RESERVADOS</br>
                               DIRECCIÓN: CARRERA 47 N° 30 SUR - 110, ENVIGADO - ANTIOQUIA, COLOMBIA</br>
                               MEDELLÍN: (57) (4) 255 64 93 | FAX: (57) (4) 5876456</p>
-			<section id="buscadorfo">
-					<a href="https://twitter.com/"><img id="twitter" src="images/twitterfo.png"></a>
-					<a href="https://www.facebook.com/"> <img id="facebook" src ="images/facebookfo.png"></a>
-					<a href="https://www.instagram.com/"><img id="instagram" src="images/instagramfo.png"></a>
-    			<FORM method=GET action="http://www.google.es/search"> 
-    			 	<fieldset> 
-        				<input type=hidden name=ie value=UTF-8 /> 
-        				<input type=hidden name=oe value=UTF-8 />                      
-        				<INPUT TYPE=text id="s" name="q" value=""/> 
-        				<font>                                
-        					<INPUT type=submit  id="y" name=btnG VALUE="Buscar" /> 
-        				</font> 
-    				</fieldset> 
-   				</FORM> 
+						<section id="buscadorfo">
+					<a class="redesfo" href="https://twitter.com/" target="_new"><span class="icon-twitter" id="icotwifo"></span></a>
+					<a class="redesfo" href="https://facebook.com/" target="_new"><span class="icon-facebook" id="icofacefo"></span></a>
+					<a class="redesfo" href="https://www.instagram.com/" target="_new"><span class="icon-instagram" id="icoinsfo"></span></a>
+					
+    			    <form action="">
+        				<input type="search" name="nombre" placeholder="Buscar">
+    				</form>
+    				
 			</section>
-			<h2 id="fecha">FECHA Y HORA</h2>
 	</footer>
 
 </body>
